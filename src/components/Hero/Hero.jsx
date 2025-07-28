@@ -15,14 +15,14 @@ function Hero() {
 
     timeline.fromTo(
       ".image",
-      { opacity: 0 },
-      { opacity: 1, duration: 1 },
+      { opacity: 0,x:50 },
+      { opacity: 1 ,x:0, duration: 1.3, ease: "power2.out" },
       
     );
     timeline.fromTo(
-      ".text",
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1 }
+      ".text>*",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1,stagger:0.2 }
     );
   }, []);
   const [currentRole, setCurrentRole] = useState(0);
@@ -63,7 +63,7 @@ function Hero() {
               I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems.
             </p>
             <div className="buttons flex flex-col md:flex-row gap-4 mt-4">
-              <button className="bg-white text-blue-500 font-bold py-2 px-4 rounded">View work</button>
+              <button className="bg-white text-blue-500 font-bold py-2 px-4 rounded">View my work</button>
               <button className="bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded" >Download CV</button>
             </div>
         </div>
