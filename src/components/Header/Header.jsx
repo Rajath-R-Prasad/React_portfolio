@@ -10,11 +10,11 @@ function Header() {
   const menuRef = useRef(null)
 
   useGSAP(() => {
-    gsap.fromTo('.nav', {y: -100, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+    gsap.fromTo('.nav', {y: -100, opacity: 0}, {y: 0, opacity: 1, duration: 0.5, ease: "power2.out"});
     if (showMenu) {
-      gsap.to(menuRef.current, { x: 0, opacity: 1, duration: 0.5, display: 'flex'})
+      gsap.to(menuRef.current, { x: 0, opacity: 1, duration: 0.5, display: 'flex', ease: "power2.out" })
     } else {
-      gsap.to(menuRef.current, { x: -100, opacity: 0, duration: 0.5, display: 'none' })
+      gsap.to(menuRef.current, { x: -120, opacity: 0, duration: 0.7, display: 'none', ease: "power2.inOut" })
     }
   }, [showMenu]); 
 
@@ -24,7 +24,7 @@ function Header() {
 
   return (
     <>
-      <nav className='nav flex flex-col md:flex-row justify-around sticky top-0 left-0 z-1000 w-[100%] text-xl items-center text-white bg-slate-700 p-4'>
+      <nav className='nav flex flex-col md:flex-row justify-around sticky top-0 left-0 z-1000 w-[100%] text-xl items-center text-white bg-gradient-to-r from-blue-400 to-blue-800 opacity-90 p-4'>
         <div className='logo flex items-center justify-center gap-3 '>
           <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF" alt="logo" className='w-6 h-6 m-2 visible md:hidden cursor-pointer' onClick={handleMenuToggle} />
           <p className='name span md:m-0 m-2 cursor-pointer text-2xl' onClick={handleMenuToggle}>Rajath's Portfolio</p> 
