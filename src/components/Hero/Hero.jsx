@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const roles = [
   "Web Developer",
   "Data Analyst",
@@ -8,6 +9,22 @@ const roles = [
 ];
 
 function Hero() {
+    // GSAP animation for the hero section
+    const timeline= gsap.timeline({ defaults: { duration: 1 } });
+    useGSAP(() => {
+
+    timeline.fromTo(
+      ".image",
+      { opacity: 0 },
+      { opacity: 1, duration: 1 },
+      
+    );
+    timeline.fromTo(
+      ".text",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
+  }, []);
   const [currentRole, setCurrentRole] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -24,26 +41,34 @@ function Hero() {
   }, []);
 
   return (
-    <div id="hero" className="hero-container w-full bg-black text-white flex flex-row gap-4 items-center justify-center h-[80vh] md:h-[91vh] text-3xl md:text-4xl">
-      <main className="flex flex-col w-[85vw] md:w-[70vw] md:flex-row gap-2 md:gap-4 border-r-4 border-b-8 m-2 p-5 rounded-lg border-red-500 items-center justify-center">
-        <div className="flex justify-center items-center h-[200px] md:h-[300px] w-[200px] md:w-[300px] rounded-full overflow-hidden">
-          <img src="my_pic.jpg" alt="my_pic" />
-        </div>
-        <div className="flex flex-col gap-3 items-center md:items-start ">
-          <h1>Hello, I am</h1>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-red-500 font-bold text-4xl md:text-5xl">
+    <div id="hero" className="hero-container w-full bg-gradient-to-r from-blue-500 to-blue-900 text-white flex flex-row gap-4 items-center justify-center h-[90vh] md:h-[91vh] text-3xl md:text-4xl overflow-auto">
+      <main className="main flex flex-col-reverse w-[85vw] md:w-[85vw] md:flex-row gap-6 md:gap-4 m-2 md:mt-2 mt-[10vh] p-3 rounded-lg items-center justify-around">
+        
+        <div className=" text flex flex-col gap-3 items-center md:items-start ">
+          <h1 className="font-extrabold text-3xl md:text-5xl">Hello, I am</h1>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-teal-500 font-bold text-4xl md:text-6xl">
             RAJATH R PRASAD
           </span>
-          <h1>
-            I am a{" "}
+          <h1 className="font-extrabold text-3xl md:text-5xl">I am a{" "}
             <span
-              className={`inline-block transition-opacity duration-300 ${
+              className={`inline-block transition-opacity text-slate-700 duration-300 ${
                 fade ? "opacity-100" : "opacity-0"
               }`}
             >
               {roles[currentRole]}
             </span>
           </h1>
+          
+            <p className="text-lg md:text-xl text-wrap">
+              I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems.
+            </p>
+            <div className="buttons flex flex-col md:flex-row gap-4 mt-4">
+              <button className="bg-white text-blue-500 font-bold py-2 px-4 rounded">View work</button>
+              <button className="bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded" >Download CV</button>
+            </div>
+        </div>
+        <div className="image h-[200px] md:h-[430px] w-[200px] md:w-[430px] rounded-full border-4 border-slate-600 overflow-hidden shrink-0">
+          <img src="my_photo.webp" alt="my_pic" className="object-bottom object-cover rounded-full w-full h-full"/>
         </div>
       </main>
     </div>
