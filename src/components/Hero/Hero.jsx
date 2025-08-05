@@ -42,7 +42,7 @@ function Hero() {
 
   return (
     <div id="home" className="hero-container bg-slate-900 w-[100vw] text-white flex flex-row gap-4 items-center justify-center h-max md:h-screen text-3xl md:text-4xl">
-      <main  className="main flex flex-col-reverse w-full md:w-[85vw] md:flex-row gap-6 md:gap-4 md:mt-2 mt-[15vh] rounded-lg items-center justify-around">
+      <main  className="main flex flex-col-reverse w-full md:w-[85vw] md:flex-row gap-6 md:gap-4 md:mt-2 mt-[15vh] rounded-lg items-center justify-around p-4" >
         
         <div className=" text flex flex-col gap-3 items-center md:items-start ">
           <h1 className="font-extrabold text-3xl md:text-5xl">Hello, I am</h1>
@@ -59,7 +59,7 @@ function Hero() {
             </span>
           </h1>
           
-            <p className="text-lg md:text-xl text-wrap">
+            <p className="text-lg text-center md:text-xl text-wrap">
               I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems.
             </p>
             <div className="buttons flex flex-col md:flex-row gap-4 mt-4">
