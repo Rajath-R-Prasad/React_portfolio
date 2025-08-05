@@ -50,7 +50,7 @@ function Projects() {
   return (
     <>
       <main id='projects' className='projects-main w-full h-screen flex flex-col items-center justify-center p-8'>
-        <h2 className='project-text h-max text-5xl font-bold mb-14 text-center'>PROJECTS</h2>
+        <h2 className='project-text h-max text-5xl font-bold mb-14 mt-14 text-center'>PROJECTS</h2>
         <div className='projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl'>
           {projects.map((project, index) => (
             <div key={index} className='project-card bg-slate-800 bg-opacity-40 p-4 rounded-lg shadow-md'>
