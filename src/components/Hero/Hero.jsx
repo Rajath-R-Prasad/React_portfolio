@@ -41,8 +41,8 @@ function Hero() {
   }, []);
 
   return (
-    <div id="hero" className="hero-container w-full bg-gradient-to-r from-blue-500 to-blue-900 text-white flex flex-row gap-4 items-center justify-center h-[90vh] md:h-[91vh] text-3xl md:text-4xl overflow-auto">
-      <main className="main flex flex-col-reverse w-[85vw] md:w-[85vw] md:flex-row gap-6 md:gap-4 m-2 md:mt-2 mt-[10vh] p-3 rounded-lg items-center justify-around">
+    <div id="home" className="hero-container bg-slate-900 w-[100vw] text-white flex flex-row gap-4 items-center justify-center h-max md:h-screen text-3xl md:text-4xl">
+      <main  className="main flex flex-col-reverse w-full md:w-[85vw] md:flex-row gap-6 md:gap-4 md:mt-2 mt-[15vh] rounded-lg items-center justify-around">
         
         <div className=" text flex flex-col gap-3 items-center md:items-start ">
           <h1 className="font-extrabold text-3xl md:text-5xl">Hello, I am</h1>
@@ -51,7 +51,7 @@ function Hero() {
           </span>
           <h1 className="font-extrabold text-3xl md:text-5xl">I am a{" "}
             <span
-              className={`inline-block transition-opacity text-slate-700 duration-300 ${
+              className={`inline-block transition-opacity text-slate-400 duration-300 ${
                 fade ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -63,7 +63,7 @@ function Hero() {
               I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems.
             </p>
             <div className="buttons flex flex-col md:flex-row gap-4 mt-4">
-              <button className="bg-white text-blue-500 font-bold py-2 px-4 rounded">View my work</button>
+              <a href="#projects"><button className="bg-white text-blue-500 font-bold py-2 px-4 rounded">View my work</button></a>
               <button className="bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded" >Download CV</button>
             </div>
         </div>
