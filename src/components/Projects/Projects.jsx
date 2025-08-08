@@ -32,7 +32,7 @@ function Projects() {
       }
     });
   
-    // Responsive animation for project cards
+    // Responsive animation for project cards with improved timing
     const isDesktop = window.innerWidth >= 1024; // Tailwind's lg breakpoint
   
     if (isDesktop) {
@@ -46,8 +46,8 @@ function Projects() {
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".project-card",
-            start: "top 80%",
-            end: "bottom top",
+            start: "top 85%",
+            end: "bottom 15%",
             toggleActions: "play reverse play reverse"
           }
       });
@@ -61,8 +61,8 @@ function Projects() {
           duration: 0.8,
           scrollTrigger: {
             trigger: card,
-            start: "top 80%",
-            end: "bottom top",
+            start: "top 85%",
+            end: "bottom 15%",
             toggleActions: "play reverse play reverse"
           }
         });
@@ -72,7 +72,7 @@ function Projects() {
 
   return (
     <>
-      <main id='projects' className='projects-main w-full h-max flex flex-col items-center justify-center p-8'>
+      <main id='projects' className='projects-main w-full h-max flex flex-col items-center justify-center p-8 mb-20'>
         <h2 className='project-text h-max text-5xl font-bold mb-14 mt-14 text-center'>PROJECTS</h2>
         <div className='projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-screen-xl'>
           {projects.map((project, index) => (
