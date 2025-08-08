@@ -8,6 +8,7 @@ import About from './components/About/About.jsx'
 import Projects from './components/Projects/Projects.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Footer from './components/Footer/Footer.jsx'
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
   <div className='w-full p-0 m-0 overflow-x-hidden overflow-y-hidden bg-slate-900'>
@@ -17,5 +18,6 @@ createRoot(document.getElementById('root')).render(
     <Projects />
     <Contact />
     <Footer />
+    <Analytics />
   </div>
 )
