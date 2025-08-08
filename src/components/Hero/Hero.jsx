@@ -82,6 +82,19 @@ function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
   const [fade, setFade] = useState(true);
 
+  const handleDownloadCV = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/RAJATH_R_PRASAD_RESUME.pdf'; // Path to your CV file
+    link.download = 'Rajath_R_Prasad_CV.pdf'; // Name for the downloaded file
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
@@ -123,7 +136,10 @@ function Hero() {
                 View my work
               </button>
             </a>
-            <button className="bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-slate-900 transition-all duration-300">
+            <button 
+              onClick={handleDownloadCV}
+              className="bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-slate-900 transition-all duration-300"
+            >
               Download CV
             </button>
           </div>
