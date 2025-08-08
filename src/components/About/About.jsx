@@ -9,54 +9,90 @@ function About() {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(SplitText);
-  // GSAP animation for the about section
+  // GSAP animation for the about section with improved ScrollTrigger
   useGSAP(() => {
-    const aboutSection = document.querySelector('.about-section');
-    const aboutContent = document.querySelector('.about-content');
-
-    gsap.fromTo(aboutSection, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
-    gsap.fromTo(aboutContent, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 0.2 });
-  }, []);
-  // GSAP ScrollTrigger for the skills section
-  useGSAP(() => {
-    
-    gsap.fromTo('.skill-category', { opacity: 0, y: 50,scale:0 }, { opacity: 1, y: 0,scale:1, duration: 1, stagger: 0.3, scrollTrigger: {
-      trigger: '.skill-category',
-      start: 'top 80%',
-      end: 'top top',
-      toggleActions: 'play reverse play reverse'
-    }});
-    
-    
-      const split = new SplitText(".about-me-text, .skill-text", { type: "chars" });
-        split.chars.forEach(char => {
-    char.classList.add(
-      "bg-clip-text",
-      "text-transparent",
-      "bg-gradient-to-r",
-      "from-blue-500",
-      "to-teal-500"
-    );
-  });
-      gsap.from(split.chars, {
-        duration: 0.7,
-        autoAlpha: 0,
-        stagger: 0.05,
-        delay: 0.8,
-        y: 100,
+    // About section animations
+    gsap.fromTo('.about-section', 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
         scrollTrigger: {
-          trigger: '.about-me-text, .about-para',
+          trigger: '.about-section',
           start: 'top 80%',
-          end: 'bottom top',
+          end: 'bottom 20%',
           toggleActions: 'play reverse play reverse'
         }
-      });
+      }
+    );
+    
+    gsap.fromTo('.about-content', 
+      { opacity: 0, y: 50 }, 
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1, 
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: '.about-content',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  }, []);
+  // GSAP ScrollTrigger for the skills section with improved timing
+  useGSAP(() => {
+    
+    gsap.fromTo('.skill-category', 
+      { opacity: 0, y: 50, scale: 0 }, 
+      { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        duration: 1, 
+        stagger: 0.3, 
+        scrollTrigger: {
+          trigger: '.skill-category',
+          start: 'top 85%',
+          end: 'bottom 15%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+    
+    const split = new SplitText(".about-me-text, .skill-text", { type: "chars" });
+    split.chars.forEach(char => {
+      char.classList.add(
+        "bg-clip-text",
+        "text-transparent",
+        "bg-gradient-to-r",
+        "from-blue-500",
+        "to-teal-500"
+      );
+    });
+    
+    gsap.from(split.chars, {
+      duration: 0.7,
+      autoAlpha: 0,
+      stagger: 0.05,
+      delay: 0.8,
+      y: 100,
+      scrollTrigger: {
+        trigger: '.about-me-text, .about-para',
+        start: 'top 85%',
+        end: 'bottom 15%',
+        toggleActions: 'play reverse play reverse'
+      }
+    });
     
   }, []);
   
   return (
     <>
-      <main id='about' className="about-main w-[100vw] h-max ">
+             <main id='about' className="about-main w-full h-max ">
         <section  className="about-section w-full flex-col">
           <div className="about-content w-full md:w-[40vw] mx-auto bg-slate-900 p-6 shadow-lg">
             <h2 className="about-me-text text-3xl md:text-5xl font-bold mb-4 text-center mt-10">About Me</h2>
