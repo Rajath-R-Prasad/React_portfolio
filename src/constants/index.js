@@ -51,3 +51,27 @@ export const projects=[
         github:"https://github.com/Rajath-R-Prasad/IMDb_analysis.git"
     }
 ]
+
+export const socialLinks = [
+    {
+        id: 1,
+        name: "GitHub",
+        url: "https://github.com/Rajath-R-Prasad",
+        icon: "github",
+        color: "hover:bg-gray-800"
+    },
+    {
+        id: 2,
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/rajath-r-prasad",
+        icon: "linkedin",
+        color: "hover:bg-blue-600"
+    },
+    {
+        id: 3,
+        name: "Instagram",
+        url: "https://instagram.com/rajath_rrp_prasad",
+        icon: "instagram",
+        color: "hover:bg-pink-600"
+    }
+]
