@@ -94,7 +94,7 @@ function Projects() {
                 {project.live && (
                   <div className='text-gray-300 text-md hover:text-slate-400 rounded-full border-2 border-slate-700 w-max px-2 transition-colors duration-300'>
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
-                      <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="live demo" className='w-6 h-6 inline mr-1' />
+                      
                       Live Demo
                     </a>
                   </div>
