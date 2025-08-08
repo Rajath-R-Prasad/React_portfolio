@@ -39,56 +39,6 @@ npm run dev
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## 📧 Contact Form Setup
-
-The contact form uses EmailJS to send emails directly to your inbox. Follow these steps to set it up:
-
-### 1. EmailJS Account Setup
-- Go to [EmailJS.com](https://www.emailjs.com/) and create a free account
-- Verify your email address
-
-### 2. Configure Email Service
-- In your EmailJS dashboard, go to "Email Services"
-- Click "Add New Service" and choose your email provider (Gmail, Outlook, etc.)
-- Follow the authentication steps
-- Note down your **Service ID**
-
-### 3. Create Email Template
-- Go to "Email Templates" in your dashboard
-- Click "Create New Template"
-- Use this template structure:
-```html
-Subject: New Contact Form Message from {{name}}
-
-Name: {{name}}
-Email: {{email}}
-Message: {{message}}
-
-This message was sent from your portfolio contact form.
-```
-- Save the template and note down your **Template ID**
-
-### 4. Get Your Public Key
-- Go to "Account" → "API Keys"
-- Copy your **Public Key**
-
-### 5. Update Configuration
-- Open `emailjs-config.js` in the root directory
-- Replace the placeholder values with your actual credentials:
-```javascript
-export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'your_actual_service_id',
-  TEMPLATE_ID: 'your_actual_template_id',
-  PUBLIC_KEY: 'your_actual_public_key'
-};
-```
-
-### 6. Test the Form
-- Start your development server: `npm run dev`
-- Navigate to the contact section
-- Fill out the form and submit
-- Check your email to confirm the message was received
-
 ## 📁 Project Structure
 
 ```

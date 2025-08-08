@@ -41,14 +41,16 @@ export const projects=[
         title: "ChronoLog",
         description: "ChronoLog is a simple, elegant digital diary built using React and Vite. It allows users to record memories and events in a timeline format. Whether it’s a daily journal or tracking progress over time, ChronoLog provides an intuitive and responsive interface for your entries.",
         image: "ChronoLog_home.png",
-        github:"https://github.com/Rajath-R-Prasad/ChronoLog_React.git"
+        github:"https://github.com/Rajath-R-Prasad/ChronoLog_React.git",
+        live:"https://rajath-r-prasad.github.io/ChronoLog_React/"
     },
     {
         id: 3,
         title: "IMDb Movie Analysis",
         description: "This project involves web scraping and data analysis of top-rated Kannada feature films listed on IMDb. Using BeautifulSoup, pandas, matplotlib and seaborn we explore trends in genres, ratings, popularity, and more.",
         image: "plot4.png",
-        github:"https://github.com/Rajath-R-Prasad/IMDb_analysis.git"
+        github:"https://github.com/Rajath-R-Prasad/IMDb_analysis.git",
+        live:"https://colab.research.google.com/github/Rajath-R-Prasad/IMDb_Analysis/blob/main/IMDb_analysis.ipynb"
     }
 ]
 

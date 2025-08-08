@@ -79,7 +79,28 @@ function Projects() {
             <div key={index} className='project-card bg-slate-800 bg-opacity-40 p-4 rounded-lg shadow-md hover:shadow-lg hover:shadow-blue-900 transition-shadow duration-300'>
               <h3 className='text-xl text-white font-semibold mb-2'>{project.title}</h3>
               <img src={project.image} alt={project.title} className='mb-2 rounded-md w-full h-[250px]' />
-              <div className='text-gray-300 text-md hover:text-slate-400 rounded-full border-2 border-slate-700 w-max px-2'><a href={project.github} target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000" alt="github" className='w-8 inline' />View Code</a></div>
+              
+              {/* Project Links */}
+              <div className='flex flex-wrap gap-2 mb-3'>
+                {/* View Code Button */}
+                <div className='text-gray-300 text-md hover:text-slate-400 rounded-full border-2 border-slate-700 w-max px-2 transition-colors duration-300'>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000" alt="github" className='w-6 h-6 inline mr-1' />
+                    View Code
+                  </a>
+                </div>
+                
+                {/* Live Demo Button - Only show if live link exists */}
+                {project.live && (
+                  <div className='text-gray-300 text-md hover:text-slate-400 rounded-full border-2 border-slate-700 w-max px-2 transition-colors duration-300'>
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="live demo" className='w-6 h-6 inline mr-1' />
+                      Live Demo
+                    </a>
+                  </div>
+                )}
+              </div>
+              
               <p className='text-gray-300'>{project.description}</p>
             </div>
           ))}
