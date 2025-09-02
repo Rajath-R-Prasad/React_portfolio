@@ -64,7 +64,7 @@ function Header() {
 
   return (
     <>
-      <nav className='nav flex flex-col md:flex-row justify-around fixed top-0 z-50 w-full text-xl items-center text-white bg-gradient-to-r from-blue-400 to-blue-900 opacity-90 p-3'>
+      <nav className='nav flex flex-col md:flex-row justify-around fixed top-0 z-50 w-full text-xl items-center text-white bg-gradient-to-b from-blue-700 via-blue-800 to-blue-900 opacity-90 p-3'>
         <div
           className='logo flex items-center justify-center gap-3'
           ref={logoRef}

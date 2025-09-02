@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer.jsx'
 import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
-  <div className='w-full p-0 m-0 overflow-x-hidden overflow-y-hidden bg-slate-900'>
+  <div className='w-full p-0 m-0 overflow-x-hidden overflow-y-hidden bg-gradient-to-br from-black via-blue-800 to-blue-950'>
     <Header />
     <Hero />
     <About />

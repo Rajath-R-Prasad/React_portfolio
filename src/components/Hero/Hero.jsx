@@ -108,8 +108,8 @@ function Hero() {
   }, []);
 
   return (
-    <div id="home" className="hero-container bg-slate-900 w-full text-white flex flex-row gap-4 items-center pt-20 justify-center h-max md:min-h-screen text-3xl md:text-4xl">
-      <main className="main flex flex-col-reverse w-full md:w-[85vw] md:flex-row gap-6 md:gap-4 md:mt-2 mt-[15vh] rounded-lg items-center justify-around p-4">
+    <div id="home" className="hero-container w-full text-white flex flex-row gap-4 items-center pt-20 justify-center h-max md:min-h-screen text-3xl md:text-4xl">
+      <main className="main flex flex-col-reverse w-full md:w-[85vw] md:flex-row gap-6 md:gap-4 md:mt-2 mt-[5vh] rounded-lg items-center justify-around p-4">
         
         <div className="hero-text flex flex-col gap-3 items-center md:items-start">
           <h1 className="font-extrabold text-3xl md:text-5xl">Hello, I am</h1>

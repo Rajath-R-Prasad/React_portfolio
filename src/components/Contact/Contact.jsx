@@ -139,7 +139,7 @@ function Contact() {
   };
 
   return (
-    <div id='contact' className='contact-container bg-slate-900 text-white h-max flex flex-col items-center justify-center overflow-hidden p-8 mt-14'>
+    <div id='contact' className='contact-container  text-white h-max flex flex-col items-center justify-center overflow-hidden p-8 mt-14'>
       <div className='max-w-4xl w-full'>
         {/* Header Section */}
         <div className='text-center mb-12'>

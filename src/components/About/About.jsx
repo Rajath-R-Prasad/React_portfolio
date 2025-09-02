@@ -92,9 +92,9 @@ function About() {
   
   return (
     <>
-             <main id='about' className="about-main w-full h-max ">
+             <main id='about' className="about-main w-full h-max">
         <section  className="about-section w-full flex-col">
-          <div className="about-content w-full md:w-[40vw] mx-auto bg-slate-900 p-6 shadow-lg">
+          <div className="about-content w-full md:w-[40vw] mx-auto p-6 shadow-lg">
             <h2 className="about-me-text text-3xl md:text-5xl font-bold mb-4 text-center mt-10">About Me</h2>
             
             <p className=" about-para md:text-lg text-gray-300 mb-4">I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems. I have experience working with various technologies and frameworks, and I'm always eager to learn more. My projects showcase my skills and dedication to creating impactful solutions.</p>
