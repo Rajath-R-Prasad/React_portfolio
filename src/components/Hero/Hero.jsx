@@ -85,7 +85,7 @@ function Hero() {
   const handleDownloadCV = () => {
     // Create a link element
     const link = document.createElement('a');
-    link.href = '/RAJATH_R_PRASAD_RESUME.pdf'; // Path to your CV file
+    link.href = '/RAJATH_R_PRASAD-Resume(DSC).pdf'; // Path to your CV file
     link.download = 'Rajath_R_Prasad_CV.pdf'; // Name for the downloaded file
     link.target = '_blank';
     

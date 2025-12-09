@@ -46,12 +46,20 @@ export const projects=[
     },
     {
         id: 3,
+        title: "Personal Portfolio Website",
+        description: "A personal portfolio website built using React to showcase my projects, skills, and experience. The website features a modern design with smooth animations and responsive layout, providing an engaging user experience across all devices.",
+        image: "portfolio.png",
+        github:"https://github.com/Rajath-R-Prasad/React_Portfolio.git",
+        live:"https://rajath-rrp-portfolio.vercel.app"
+    },
+    {
+        id: 4,
         title: "IMDb Movie Analysis",
         description: "This project involves web scraping and data analysis of top-rated Kannada feature films listed on IMDb. Using BeautifulSoup, pandas, matplotlib and seaborn we explore trends in genres, ratings, popularity, and more.",
         image: "plot4.png",
         github:"https://github.com/Rajath-R-Prasad/IMDb_analysis.git",
         live:"https://colab.research.google.com/github/Rajath-R-Prasad/IMDb_Analysis/blob/main/IMDb_analysis.ipynb"
-    }
+    },
 ]
 
 export const socialLinks = [

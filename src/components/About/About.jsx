@@ -4,6 +4,8 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import SplitText from "gsap/SplitText";
+import SplitType from "split-type";
+
 
 function About() {
   // Register ScrollTrigger plugin
@@ -43,6 +45,33 @@ function About() {
       }
     );
   }, []);
+  // GSAP animation for about heading text
+  useGSAP(() => {
+    const split = new SplitType('.about-me-text', { types: 'chars' });
+    split.chars.forEach(char => {
+      char.classList.add(
+        "bg-clip-text",
+        "text-transparent",
+        "bg-gradient-to-r",
+        "from-blue-500",
+        "to-teal-500"
+      );
+    });
+    
+    gsap.from(split.chars, {
+      duration: 0.7,
+      autoAlpha: 0,
+      stagger: 0.05,
+      y: 100,
+      scrollTrigger: {
+        trigger: '.about-me-text',
+        start: 'top 85%',
+        end: 'bottom 15%',
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+  }, []);
+
   // GSAP ScrollTrigger for the skills section with improved timing
   useGSAP(() => {
     
@@ -63,7 +92,7 @@ function About() {
       }
     );
     
-    const split = new SplitText(".about-me-text, .skill-text", { type: "chars" });
+    const split = new SplitType('.skill-text', { types: 'chars' });
     split.chars.forEach(char => {
       char.classList.add(
         "bg-clip-text",
@@ -78,10 +107,9 @@ function About() {
       duration: 0.7,
       autoAlpha: 0,
       stagger: 0.05,
-      delay: 0.8,
       y: 100,
       scrollTrigger: {
-        trigger: '.about-me-text, .about-para',
+        trigger: '.skill-text',
         start: 'top 85%',
         end: 'bottom 15%',
         toggleActions: 'play reverse play reverse'
@@ -95,12 +123,12 @@ function About() {
              <main id='about' className="about-main w-full h-max">
         <section  className="about-section w-full flex-col">
           <div className="about-content w-full md:w-[40vw] mx-auto p-6 shadow-lg">
-            <h2 className="about-me-text text-3xl md:text-5xl font-bold mb-4 text-center mt-10">About Me</h2>
+            <h2 className="about-me-text text-3xl md:text-5xl font-bold mb-4 text-center mt-10">ABOUT ME</h2>
             
             <p className=" about-para md:text-lg text-gray-300 mb-4">I'm Rajath, a developer passionate about building sleek web apps and exploring the power of data. I blend frontend skills with backend logic, and dive into data analysis and machine learning to solve real-world problems. I have experience working with various technologies and frameworks, and I'm always eager to learn more. My projects showcase my skills and dedication to creating impactful solutions.</p>
             </div>
             <div className="skills-section w-full md:w-[60vw] mx-auto h-max mt-10">
-                <h3 className="skill-text text-3xl md:text-5xl font-bold text-center mt-8 mb-4">Skills</h3>
+                <h3 className="skill-text text-3xl md:text-5xl font-bold text-center mt-8 mb-4">SKILLS</h3>
                 <div className='flex flex-col flex-wrap justify-center gap-3 items-center'>
 
                 {skills.map((skillCategory, index) => (
