@@ -30,31 +30,32 @@ function Projects() {
         trigger: '.project-text',
         start: 'top 85%',
         end: 'bottom 15%',
-        toggleActions: 'play reverse play reverse'
+        toggleActions: 'play none none none'
       }
     });
     
     // Responsive animation for project cards with improved timing
     const isDesktop = window.innerWidth >= 1024; // Tailwind's lg breakpoint
-  
+
     if (isDesktop) {
-      // Stagger all cards at once on desktop
+      // Stagger all cards together on desktop when the container enters
       gsap.from(".project-card", {
         x: 50,
         y: 100,
         opacity: 0,
         duration: 0.8,
-        stagger: 0.2,
+        stagger: 0.18,
         ease: "power2.out",
         scrollTrigger: {
-            trigger: ".project-card",
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play reverse play reverse"
-          }
+          // trigger the whole container so the cards animate as a group
+          trigger: ".projects-container",
+          start: "top 75%",
+          end: "bottom 15%",
+          toggleActions: "play none none none"
+        }
       });
     } else {
-      // Animate each card on scroll on mobile/tablet
+      // Animate each card on scroll on mobile/tablet (individual triggers)
       gsap.utils.toArray(".project-card").forEach((card) => {
         gsap.from(card, {
           x: 50,
@@ -64,8 +65,8 @@ function Projects() {
           scrollTrigger: {
             trigger: card,
             start: "top 85%",
-            end: "bottom 30%",
-            toggleActions: "play reverse play reverse"
+            end: "bottom 15%",
+            toggleActions: "play none none none"
           }
         });
       });
