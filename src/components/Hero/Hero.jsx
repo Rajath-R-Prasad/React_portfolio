@@ -152,167 +152,163 @@ export default function Hero() {
       </div>
 
       {/* ── Floating ambient blobs ── */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-[0.04] pointer-events-none"
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-[0.12] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #1a1aff 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/3 left-1/5 w-72 h-72 rounded-full opacity-[0.06] pointer-events-none"
+      <div className="absolute bottom-1/3 left-1/5 w-72 h-72 rounded-full opacity-[0.14] pointer-events-none"
         style={{ background: 'radial-gradient(circle, #d4ff00 0%, transparent 70%)' }} />
+      <div className="absolute top-[60%] right-[5%] w-56 h-56 rounded-full opacity-[0.08] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #ff3366 0%, transparent 70%)' }} />
 
-      {/* ── Floating UI elements ── */}
-      <div className="hero-float-1 absolute top-[18%] left-[6%] opacity-10 pointer-events-none hidden lg:block">
-        <div className="w-16 h-16 border-2 border-nb-blue rotate-12" />
+      {/* ── Floating UI elements (coloured) ── */}
+      <div className="hero-float-1 absolute top-[18%] left-[6%] opacity-40 pointer-events-none hidden lg:block">
+        <div className="w-16 h-16 bg-nb-blue rotate-12" />
       </div>
-      <div className="hero-float-2 absolute bottom-[25%] right-[8%] opacity-10 pointer-events-none hidden lg:block">
-        <div className="w-10 h-10 border-2 border-nb-blue rounded-full" />
+      <div className="hero-float-2 absolute bottom-[25%] right-[8%] opacity-35 pointer-events-none hidden lg:block">
+        <div className="w-12 h-12 rounded-full bg-nb-neon" />
       </div>
-      <div className="hero-float-3 absolute top-[55%] left-[3%] opacity-10 pointer-events-none hidden lg:block">
-        <div className="w-6 h-6 bg-nb-neon rotate-45" />
+      <div className="hero-float-3 absolute top-[55%] left-[3%] opacity-50 pointer-events-none hidden lg:block">
+        <div className="w-8 h-8 bg-nb-neon rotate-45" />
       </div>
-      <div className="hero-float-1 absolute top-[30%] right-[14%] opacity-[0.07] pointer-events-none hidden lg:block">
-        <div className="font-mono text-xs text-nb-blue">
+      <div className="hero-float-1 absolute top-[75%] left-[15%] opacity-30 pointer-events-none hidden lg:block">
+        <div className="w-5 h-5 bg-nb-blue rounded-full" />
+      </div>
+      <div className="hero-float-2 absolute top-[28%] right-[20%] opacity-25 pointer-events-none hidden lg:block">
+        <div className="w-10 h-10 border-[3px] border-nb-neon rotate-45" />
+      </div>
+      <div className="hero-float-3 absolute bottom-[15%] left-[8%] opacity-30 pointer-events-none hidden lg:block">
+        <div className="font-mono text-xs text-nb-neon">
           {`{ dev: true,\n  skills: "∞" }`}
         </div>
       </div>
 
       {/* ── Main Content ── */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-10 lg:py-16 gap-12 flex-1">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pt-6 pb-4 flex-1 flex flex-col gap-4">
 
-        {/* ── LEFT: Typography block ── */}
-        <div className="flex flex-col gap-5 flex-1 max-w-2xl">
-
-          {/* Availability badge */}
-          <div ref={badgeRef} className="opacity-0 flex items-center gap-2.5 w-fit border-[2px] border-nb-neon px-3 py-1.5">
-            <span className="relative flex items-center justify-center w-2 h-2">
-              <span className="avail-ring" />
-              <span className="relative block w-2 h-2 rounded-full bg-nb-neon" />
-            </span>
-            <span className="font-mono text-[10px] font-bold text-nb-neon uppercase tracking-[0.1em]">
-              Let's build something
-            </span>
-          </div>
-
-          {/* Name */}
-          <div className="overflow-hidden perspective-[600px]">
-            <h1
-              ref={nameRef}
-              className="font-bebas text-[clamp(3.8rem,9vw,8.5rem)] leading-[0.9] tracking-[2px] text-white select-none"
-            >
-              RAJATH R PRASAD
-            </h1>
-          </div>
-
-          {/* Role lines */}
-          <div className="flex flex-col gap-1">
-            <div className="hero-line opacity-0 flex items-center gap-3 flex-wrap">
-              <span className="font-bebas text-[clamp(1.6rem,3.5vw,2.8rem)] leading-none text-nb-neon">
-                I BUILD
-              </span>
-              <span className="font-bebas text-[clamp(1.6rem,3.5vw,2.8rem)] leading-none text-nb-neon">
-                DIGITAL
-              </span>
-              <span className="font-bebas text-[clamp(1.6rem,3.5vw,2.8rem)] leading-none text-outline-blue">
-                EXPERIENCES
-              </span>
-            </div>
-            <div className="hero-line opacity-0 font-bebas text-[clamp(1rem,2vw,1.6rem)] leading-none text-white/50 tracking-[0.15em] uppercase">
-              that feel cinematic.
-            </div>
-          </div>
-
-          {/* Animated role */}
-          <div className="hero-tagline opacity-0 flex items-center gap-3 border-l-[3px] border-nb-neon pl-4 py-1">
-            <span className="font-space text-sm text-nb-neon/60 uppercase tracking-[0.08em]">Currently:</span>
-            <span
-              className={`font-space text-sm font-semibold text-white/80 transition-opacity duration-300 ${roleFade ? 'opacity-100' : 'opacity-0'}`}
-            >
-              {roles[currentRole]}
-            </span>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mt-2">
-            <a
-              href="#projects"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center gap-2 px-6 py-3.5 bg-nb-blue text-white font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-nb-blue nb-shadow-neon hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all duration-100"
-            >
-              View Work ↗
-            </a>
-            <button
-              onClick={handleDownloadCV}
-              className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-white font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-white/25 hover:border-nb-neon hover:text-nb-neon hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100"
-            >
-              Download CV
-            </button>
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center gap-2 px-6 py-3.5 bg-transparent text-white/50 font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-white/10 hover:text-white/80 hover:border-white/20 transition-all duration-200"
-            >
-              Let's Talk
-            </a>
-          </div>
-
-          {/* Tech stack tags */}
-          <div className="flex flex-wrap gap-2 mt-1">
-            {[
-              { label: 'React', color: 'hot' },
-              { label: 'JavaScript', color: 'blu' },
-              { label: 'Python', color: 'hot' },
-              { label: 'FastAPI', color: 'blu' },
-              { label: 'SQL', color: '' },
-              { label: 'ML / AI', color: '' },
-              { label: 'Tailwind', color: 'hot' },
-              { label: 'Git', color: '' },
-            ].map((tag) => (
-              <span
-                key={tag.label}
-                className={`hero-tag opacity-0 font-mono text-[9px] font-bold uppercase tracking-[0.06em] px-2.5 py-[5px] border-[1.5px] transition-all duration-200 cursor-default
-                  ${tag.color === 'hot' ? 'border-nb-neon text-nb-neon hover:bg-nb-neon hover:text-nb-black' :
-                    tag.color === 'blu' ? 'border-nb-blue-light text-nb-blue-light hover:bg-nb-blue hover:text-white' :
-                    'border-white/15 text-white/40 hover:border-white/30 hover:text-white/60'}`}
-              >
-                {tag.label}
-              </span>
-            ))}
-          </div>
+        {/* ── Badge ── */}
+        <div ref={badgeRef} className="opacity-0 flex items-center gap-2.5 w-fit border-[2px] border-nb-neon px-3 py-1.5">
+          <span className="relative flex items-center justify-center w-2 h-2">
+            <span className="avail-ring" />
+            <span className="relative block w-2 h-2 rounded-full bg-nb-neon" />
+          </span>
+          <span className="font-mono text-[10px] font-bold text-nb-neon uppercase tracking-[0.1em]">
+            Let's build something
+          </span>
         </div>
 
-        {/* ── RIGHT: Photo ── */}
-        <div ref={photoRef} className="opacity-0 relative flex-shrink-0">
-          {/* Decorative frame */}
-          <div className="absolute -top-3 -right-3 w-full h-full border-[2px] border-nb-neon opacity-50 pointer-events-none" />
-          <div className="absolute -bottom-3 -left-3 w-full h-full border-[2px] border-nb-blue opacity-30 pointer-events-none" />
-
-          {/* Photo container */}
-          <div className="hero-photo-wrap w-[260px] h-[310px] md:w-[320px] md:h-[380px] lg:w-[380px] lg:h-[460px] overflow-hidden border-[3px] border-white/10 relative">
-            <img
-              src="/my-photo.png"
-              alt="Rajath R Prasad"
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="hero-photo-glow" />
-
-            {/* Corner accent */}
-            <div className="absolute bottom-3 right-3 font-mono text-[8px] text-white/20 tracking-[0.1em] z-10">
-              RAJATH.DEV
-            </div>
-          </div>
-
-          {/* Floating stats around photo */}
-          <div className="absolute -left-20 top-8 hidden lg:flex flex-col gap-0 hero-float-2">
-            <div className="px-3 py-2 bg-nb-dark border-l-[3px] border-nb-blue">
-              <div className="font-bebas text-[28px] text-white leading-none">12<sup className="text-nb-neon text-[13px]">+</sup></div>
-              <div className="font-mono text-[8px] text-white/30 uppercase tracking-[0.1em]">Projects</div>
-            </div>
-          </div>
-
-          <div className="absolute -right-20 bottom-16 hidden lg:flex flex-col gap-0 hero-float-1">
-            <div className="px-3 py-2 bg-nb-dark border-l-[3px] border-nb-neon">
-              <div className="font-bebas text-[22px] text-nb-blue leading-none">Developer</div>
-              <div className="font-mono text-[8px] text-white/30 uppercase tracking-[0.1em]">Freelancer</div>
-            </div>
-          </div>
+        {/* ── NAME – full width, centred ── */}
+        <div className="flex justify-center overflow-visible">
+          <h1
+            ref={nameRef}
+            className="text-[clamp(0.8rem,4.8vw,5.5rem)] leading-[1.05] tracking-[1px] text-white select-none whitespace-nowrap"
+            style={{ fontFamily: '"Stalinist One", sans-serif', fontWeight: 400 }}
+          >
+            RAJATH R PRASAD
+          </h1>
         </div>
+
+        {/* ── Neon accent divider ── */}
+        <div className="w-full h-[3px] bg-gradient-to-r from-nb-neon via-nb-blue to-transparent" />
+
+        {/* ── Two equal columns below name ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1">
+
+          {/* LEFT — text content */}
+          <div className="flex flex-col gap-4 lg:gap-10 justify-center items-center lg:items-start">
+
+            {/* Role lines */}
+            <div className="flex flex-col gap-2">
+              <div className="hero-line opacity-0 flex items-center gap-3 flex-wrap">
+                <span className="font-bebas text-[clamp(1.4rem,5.5vw,4.5rem)] leading-none text-nb-neon">I BUILD</span>
+                <span className="font-bebas text-[clamp(1.4rem,5.5vw,4.5rem)] leading-none text-nb-neon">DIGITAL</span>
+                <span className="font-bebas text-[clamp(1.4rem,5.5vw,4.5rem)] leading-none text-outline-blue">EXPERIENCES</span>
+              </div>
+              <div className="hero-line opacity-0 font-bebas text-[clamp(0.85rem,2.5vw,2rem)] leading-none text-white/50 tracking-[0.15em] uppercase">
+                that feel cinematic.
+              </div>
+            </div>
+
+            {/* Animated role */}
+            <div className="hero-tagline opacity-0 flex items-center gap-3 border-l-[3px] border-nb-neon pl-4 py-1">
+              <span className="font-space text-sm text-nb-neon/60 uppercase tracking-[0.08em]">Currently:</span>
+              <span className={`font-space text-sm font-semibold text-white/80 transition-opacity duration-300 ${roleFade ? 'opacity-100' : 'opacity-0'}`}>
+                {roles[currentRole]}
+              </span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:items-center lg:gap-4 w-full">
+              {/* Row 1 on mobile: View Work + Download CV */}
+              <div className="grid grid-cols-2 gap-3 lg:contents">
+                <a
+                  href="#projects"
+                  onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-nb-blue text-white font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-nb-blue nb-shadow-neon hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all duration-100"
+                >View Work ↗</a>
+                <button
+                  onClick={handleDownloadCV}
+                  className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent text-white font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-white/25 hover:border-nb-neon hover:text-nb-neon hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100"
+                >Download CV</button>
+              </div>
+              {/* Row 2 on mobile: Let's Talk centred */}
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="hero-cta-btn magnetic-btn opacity-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent text-white/50 font-space font-bold text-[12px] uppercase tracking-[0.08em] border-[2.5px] border-white/10 hover:text-white/80 hover:border-white/20 transition-all duration-200 lg:w-auto w-full"
+              >Let's Talk</a>
+            </div>
+
+            {/* Tech tags */}
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+              {[
+                { label: 'React', color: 'hot' }, { label: 'JavaScript', color: 'blu' },
+                { label: 'Python', color: 'hot' }, { label: 'FastAPI', color: 'blu' },
+                { label: 'SQL', color: '' }, { label: 'ML / AI', color: '' },
+                { label: 'Tailwind', color: 'hot' }, { label: 'Git', color: '' },
+              ].map((tag) => (
+                <span key={tag.label}
+                  className={`hero-tag opacity-0 font-mono text-[9px] font-bold uppercase tracking-[0.06em] px-2.5 py-[5px] border-[1.5px] transition-all duration-200 cursor-default
+                    ${tag.color === 'hot' ? 'border-nb-neon text-nb-neon hover:bg-nb-neon hover:text-nb-black' :
+                      tag.color === 'blu' ? 'border-nb-blue-light text-nb-blue-light hover:bg-nb-blue hover:text-white' :
+                      'border-white/15 text-white/40 hover:border-white/30 hover:text-white/60'}`}
+                >{tag.label}</span>
+              ))}
+            </div>
+
+          </div>{/* end LEFT */}
+
+          {/* RIGHT — photo centred */}
+          <div ref={photoRef} className="opacity-0 flex items-center justify-center">
+            <div className="relative">
+              {/* Coloured decorative frames */}
+              <div className="absolute -top-4 -right-4 w-full h-full border-[3px] border-nb-neon pointer-events-none" />
+              <div className="absolute -bottom-4 -left-4 w-full h-full border-[3px] border-nb-blue pointer-events-none" />
+              <div className="absolute -top-8 -left-8 w-12 h-12 bg-nb-neon opacity-60 rotate-12 pointer-events-none" />
+              <div className="absolute -bottom-6 -right-6 w-8 h-8 rounded-full bg-nb-blue opacity-70 pointer-events-none" />
+
+              {/* Photo */}
+              <div className="hero-photo-wrap w-[260px] h-[320px] md:w-[300px] md:h-[370px] xl:w-[340px] xl:h-[420px] overflow-hidden border-[3px] border-white/10 relative">
+                <img src="/my-photo.png" alt="Rajath R Prasad" className="w-full h-full object-cover object-top" />
+                <div className="hero-photo-glow" />
+                <div className="absolute bottom-3 right-3 font-mono text-[8px] text-white/20 tracking-[0.1em] z-10">RAJATH.DEV</div>
+              </div>
+
+              {/* Stat chips */}
+              <div className="absolute -left-[88px] top-6 hero-float-2 hidden xl:block">
+                <div className="px-3 py-2 bg-nb-dark border-l-[3px] border-nb-blue">
+                  <div className="font-bebas text-[28px] text-white leading-none">12<sup className="text-nb-neon text-[13px]">+</sup></div>
+                  <div className="font-mono text-[8px] text-white/30 uppercase tracking-[0.1em]">Projects</div>
+                </div>
+              </div>
+              <div className="absolute -right-[88px] bottom-12 hero-float-1 hidden xl:block">
+                <div className="px-3 py-2 bg-nb-dark border-l-[3px] border-nb-neon">
+                  <div className="font-bebas text-[22px] text-nb-blue leading-none">Developer</div>
+                  <div className="font-mono text-[8px] text-white/30 uppercase tracking-[0.1em]">Freelancer</div>
+                </div>
+              </div>
+            </div>
+          </div>{/* end RIGHT */}
+
+        </div>{/* end grid */}
       </div>
 
       {/* ── Bottom scroll indicator ── */}

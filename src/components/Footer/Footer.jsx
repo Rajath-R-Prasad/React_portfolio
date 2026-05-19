@@ -156,8 +156,18 @@ export default function Footer() {
         <div className="font-mono text-[9px] text-white/15 uppercase tracking-[0.15em]">
           © {new Date().getFullYear()} Rajath R Prasad. All rights reserved.
         </div>
-        <div className="font-mono text-[9px] text-white/15 uppercase tracking-[0.15em]">
-          Built with React + Tailwind + GSAP
+        <div className="flex items-center gap-6">
+          <div className="font-mono text-[9px] text-white/15 uppercase tracking-[0.15em]">
+            Built with React + Tailwind + GSAP
+          </div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="group flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.12em] text-nb-neon border-[1.5px] border-nb-neon px-3 py-2 hover:bg-nb-neon hover:text-nb-black transition-all duration-200"
+            aria-label="Back to top"
+          >
+            <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5">↑</span>
+            Back to Top
+          </button>
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -117,6 +117,11 @@ export default function Skills() {
     setActiveCategory(id);
     animateBars();
   };
+
+  // Animate bars on initial mount (show Frontend by default)
+  useEffect(() => {
+    animateBars();
+  }, []);
 
   const activeCat = skillCategories.find(c => c.id === activeCategory);
 
