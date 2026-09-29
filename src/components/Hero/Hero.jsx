@@ -122,7 +122,7 @@ export default function Hero() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/(JPMC)RAJATH R PRASAD - Resume.pdf';
+    link.href = '/Rajath_Resume.pdf';
     link.download = 'Rajath_R_Prasad_CV.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
